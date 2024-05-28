@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('icon2.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.wrapper:hover {
+    opacity: 0.95;
+}
+
+.wrapper h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.input-box input:hover {
+    background-color: #7cb0e3;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-box i:hover {
+    color: #8CC0DE;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-forgot:hover {
+    background-color: #7cb0e3;
+}
+
+.show-pwd {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.show-pwd:hover {
+    color: #0E2954;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: whitesmoke;
+    color: #0E2954;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #6fbdfc;
+    transform: scale(1.05);
+}
+
+.register-link {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #281374;
+    text-decoration: none;
+}

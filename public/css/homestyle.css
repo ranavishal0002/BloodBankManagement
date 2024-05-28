@@ -1,0 +1,82 @@
+/* Navbar styling */
+.navbar {
+    background-color: #dc3545;
+    /* Red background color */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff;
+    /* White text color */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+    /* Light gray text color on hover */
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+    /* White color for toggler icon */
+}
+
+/* Hover effect for navbar toggler */
+.navbar-toggler:hover {
+    background-color: #c82333;
+    /* Darker red color on hover */
+}
+
+/* Button styling */
+.btn {
+    background-color: #fff;
+    /* White background color */
+    color: #dc3545;
+    /* Red text color */
+    border: 1px solid #dc3545;
+    /* Red border */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #dc3545;
+    /* Red background color on hover */
+    color: #fff;
+    /* White text color on hover */
+}
+
+/* Hero button */
+#bdonateButton {
+    background-color: #fff;
+    /* White background color */
+    color: #dc3545;
+    /* Red text color */
+    border: 2px solid #dc3545;
+    /* Red border */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+#bdonateButton:hover {
+    background-color: #dc3545;
+    /* Red background color on hover */
+    color: #fff;
+    /* White text color on hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: #343a40;
+    /* Dark background color */
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Hover effect for footer */
+footer:hover {
+    background-color: #292b2c;
+    /* Darker background color on hover */
+}

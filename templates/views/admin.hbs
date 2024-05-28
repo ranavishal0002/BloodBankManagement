@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Admin Panel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Blood Bank Admin</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#" onclick="goToAdmin()">Home</a>
+                </li>
+                <li class="active">
+                    <a href="/users">Donors</a>
+                </li>
+                <li>
+                    <a href="#">Inventory</a>
+                </li>
+                <li>
+                    <a href="#">Requests</a>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="#">Welcome, Admin</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content-inner">
+                <!-- Page content goes here -->
+                <h2>Donor List</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Blood Group</th>
+                            <th>Phone Number</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each users}}
+                        <tr>
+                            <td>{{this.firstname}} {{this.lastname}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.age}}</td>
+                            <td>{{this.bloodgroup}}</td>
+                            <td>{{this.phonenumber}}</td>
+                            <td>{{this.gender}}</td>
+                            <td>
+                                <form action="/edit-user/{{this._id}}" method="post" style="display:inline-block;">
+                                    <button type="submit" class="btn btn-warning">Edit</button>
+                                </form>
+                                <form action="/delete-user/{{this._id}}" method="post" style="display:inline-block;">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript for sidebar toggle -->
+    <script src="/js/sidebar-toggle.js"></script>
+    <script>
+        function logout() {
+            window.location.href = "/adminlogin";
+        }
+
+        function goToAdmin() {
+            window.location.href = "/admin";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/homestyle.css">
+</head>
+
+<body>
+
+    <form action="/home" method="post">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+            <a class="navbar-brand" href="#">Blood Donation</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Logout</a> <!-- Added login button -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a> <!-- Added registration button -->
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="jumbotron jumbotron-fluid text-center bg-danger text-white">
+            <div class="container">
+                <h1 class="display-4">Donate Blood, Save Lives</h1>
+                <p class="lead">Join us in making a difference. Your blood can be a lifeline.</p>
+                <a class="btn btn-light btn-lg" href="/templates/views/donate.hbs" id="bdonateButton">Donate Now</a>
+
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Us</h2>
+                    <p>We are a dedicated team of volunteers working to ensure a steady supply of safe blood for those
+                        in need.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="h3.jpg" alt="Blood Donation" class="img-fluid rounded-circle">
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="bg-light text-center py-5">
+            <h2>Ready to Donate?</h2>
+            <p>Your donation can make a significant impact. Join us today.</p>
+            <a class="btn btn-danger btn-lg" href="#">Get Started</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center bg-dark text-white py-3">
+            <p>&copy; 2023 Blood Donation Website</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            // Get the donate button by its id
+            var donateButton = document.getElementById('donateButton');
+
+            // Add a click event listener to the button
+            donateButton.addEventListener('click', function () {
+                // Redirect to the donate page
+                window.location.href = "/donate"; // Update the path accordingly
+            });
+        </script>
+
+    </form>
+
+</body>
+
+</html>

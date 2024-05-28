@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/landingpage.css"> <!-- Link to your custom CSS file -->
+</head>
+
+<body>
+    <form action="landingpage" method="post">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="">Team Red</a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                {{!-- <li class="nav-item">
+                    <a class="nav-link" href="#" id="userLink" onclick="loadUserPage()">User</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminlogin" id="adminLink">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login" id="loginLink">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Register
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="registerDropdown">
+                        <a class="dropdown-item" href="/register">User</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Placeholder divs for dynamic content -->
+    <div id="contentContainer">
+        <div id="adminPanelPage" style="display: none;">
+            <!-- Admin Panel content will be loaded here -->
+            <h1>Welcome to Admin Panel!</h1>
+            <p>This is where your Admin Panel content will go.</p>
+        </div>
+        <div id="loginPage" style="display: none;">
+            <!-- Login Page content will be loaded here -->
+            <h1>Login Page</h1>
+            <p>This is where your Login Page content will go.</p>
+        </div>
+        <div id="registerPage" style="display: none;">
+            <!-- Register Page content will be loaded here -->
+            <h1>Register Page</h1>
+            <p>This is where your Register Page content will go.</p>
+        </div>
+    </div>
+</form>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to show/hide content based on navigation clicks
+        function showContent(contentId) {
+            $('#contentContainer > div').hide(); // Hide all content divs
+            $(contentId).show(); // Show the selected content
+        }
+
+        // Function to load User page
+        function loadUserPage() {
+            showContent('#userPage'); // Placeholder for User Page content
+        }
+
+        // Function to load Login page
+        function loadLoginPage() {
+            showContent('#loginPage'); // Show Login Page content
+        }
+
+        // Function to load Register page
+        function loadRegisterPage() {
+            showContent('#registerPage'); // Show Register Page content
+        }
+
+        // Function to show Admin Panel
+        function showAdminPanel() {
+            showContent('#adminPanelPage'); // Show Admin Panel content
+        }
+    </script>
+</body>
+
+</html>
