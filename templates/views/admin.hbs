@@ -7,6 +7,23 @@
     <title>Blood Bank Admin Panel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/admin.css">
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            background-color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,11 +37,11 @@
                 <li>
                     <a href="#" onclick="goToAdmin()">Home</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="/users">Donors</a>
                 </li>
-                <li>
-                    <a href="#">Inventory</a>
+                <li class="active">
+                    <a href="#" onclick="goToInventory()">Inventory</a>
                 </li>
                 <li>
                     <a href="#">Requests</a>
@@ -55,41 +72,57 @@
             </nav>
 
             <div class="content-inner">
-                <!-- Page content goes here -->
-                <h2>Donor List</h2>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Age</th>
-                            <th>Blood Group</th>
-                            <th>Phone Number</th>
-                            <th>Gender</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each users}}
-                        <tr>
-                            <td>{{this.firstname}} {{this.lastname}}</td>
-                            <td>{{this.email}}</td>
-                            <td>{{this.age}}</td>
-                            <td>{{this.bloodgroup}}</td>
-                            <td>{{this.phonenumber}}</td>
-                            <td>{{this.gender}}</td>
-                            <td>
-                                <form action="/edit-user/{{this._id}}" method="post" style="display:inline-block;">
-                                    <button type="submit" class="btn btn-warning">Edit</button>
-                                </form>
-                                <form action="/delete-user/{{this._id}}" method="post" style="display:inline-block;">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
+                <!-- Donor List Section -->
+                <div id="donors-section">
+                    <h2>Donor List</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>Blood Group</th>
+                                <th>Phone Number</th>
+                                <th>Gender</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each users}}
+                            <tr>
+                                <td>{{this.firstname}} {{this.lastname}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.age}}</td>
+                                <td>{{this.bloodgroup}}</td>
+                                <td>{{this.phonenumber}}</td>
+                                <td>{{this.gender}}</td>
+                                <td>
+                                    <form action="/edit-user/{{this._id}}" method="post" style="display:inline-block;">
+                                        <button type="submit" class="btn btn-warning">Edit</button>
+                                    </form>
+                                    <form action="/delete-user/{{this._id}}" method="post"
+                                        style="display:inline-block;">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Inventory Section -->
+                <div id="inventory-section" style="display: none;">
+                    <h2>Blood Group Inventory</h2>
+                    <div class="card-container">
+                        {{#each bloodGroups}}
+                        <div class="card">
+                            <h3>{{_id}}</h3>
+                            <p>{{count}} donors</p>
+                        </div>
                         {{/each}}
-                    </tbody>
-                </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -109,6 +142,12 @@
 
         function goToAdmin() {
             window.location.href = "/admin";
+        }
+
+        function goToInventory() {
+            // Show the inventory section and hide the donors section
+            document.getElementById('donors-section').style.display = 'none';
+            document.getElementById('inventory-section').style.display = 'block';
         }
     </script>
 </body>

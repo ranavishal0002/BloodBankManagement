@@ -69,86 +69,33 @@ body {
     margin-top: 20px;
 }
 
-.navbar {
-    background: #23272b;
-    color: #fff;
-    padding: 10px 20px;
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.navbar .nav-item .nav-link {
-    color: #fff;
-}
-
-.table {
-    margin-top: 20px;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-}
-
-.table thead {
-    background: #343a40;
-    color: #fff;
-    border: none;
-}
-
-.table thead th {
-    border: none;
-}
-
-.table tbody tr {
+.card {
     background: #fff;
-    border: none;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px;
 }
 
-.table tbody tr td {
-    border: none;
-    padding: 15px;
-    vertical-align: middle;
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.table tbody tr td form {
-    display: inline-block;
-    margin-right: 5px;
+.card h3 {
+    margin: 0 0 10px;
+    color: #343a40;
 }
 
-.btn {
-    padding: 5px 10px;
-    font-size: 0.9em;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-.btn-warning {
-    background-color: #f0ad4e;
-    border-color: #eea236;
-    color: #fff;
-}
-
-.btn-danger {
-    background-color: #d9534f;
-    border-color: #d43f3a;
-    color: #fff;
-}
-
-.btn-warning:hover {
-    background-color: #ec971f;
-    border-color: #d58512;
-}
-
-.btn-danger:hover {
-    background-color: #c9302c;
-    border-color: #ac2925;
-}
-
-#sidebarCollapse {
-    color: #fff;
-    background: #343a40;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#sidebarCollapse:hover {
-    background: #495057;
+.card p {
+    margin: 0;
+    color: #495057;
 }
